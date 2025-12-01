@@ -4,6 +4,10 @@
 /*body*/
 body{
     margin-top: 0px;
+   
+}
+a{
+    text-decoration: none !important;
 }
 .navbar{
     background-color: #000000 !important;
@@ -31,17 +35,49 @@ header {
 }
 /*button*/
 
-.btn.custom-primary {
+.custom-primary {
     background-color: #D62828 !important;
     border-color: #D62828 !important;
     color: white !important;
 }
 
-.btn.custom-primary:hover {
+.custom-primary:hover {
     background-color: transparent !important;
     color: #D62828 !important;
-    border-color: #D62828 !important;
+    border: 2px solid #D62828 !important;
+    font-weight: 700;
 }
+
+
+
+
+/* Hover effect for card title */
+.card-title:hover {
+    color: #D62828;       /* Change text color on hover */
+    font-size: 1.4em;     /* Increase font size on hover */
+    transition: all 0.4s ease; /* Smooth transition */
+}
+
+/* Hover effect for card text */
+.card-text:hover {
+    color: #D62828;       /* Change text color on hover */
+    font-size: 1.1em;     /* Slightly increase font size */
+    
+}
+.old_price{
+    font-size: 1.1rem;
+    background-color:red;
+    padding: 2px 6px;
+    color: white;
+    border-radius: 5px;
+}
+.new_price{
+    font-size: 1.1rem;
+    background-color:green;
+    padding: 2px 6px;
+    color: white;
+    border-radius: 5px;
+
 
 /*Footer*/
 footer {

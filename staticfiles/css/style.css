@@ -4,6 +4,7 @@
 /*body*/
 body{
     margin-top: 0px;
+    
 }
 .navbar{
     background-color: #000000 !important;
@@ -24,11 +25,26 @@ header {
         url("../images/hero_fb.webp");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center bottom ; /*moves down*/
+    background-position: center bottom ;
     color: #fff;
     padding: 8rem 0;
-    min-height: 650px;
+    min-height:500px;
 }
+/*button*/
+
+.btn.custom-primary {
+    background-color: #D62828 !important;
+    border: 2px solid #D62828 !important;
+    color: white !important;
+}
+
+.btn.custom-primary:hover {
+    background-color: transparent !important;
+    color: #D62828 !important;
+    border: 2px solid #D62828 !important;
+}
+ 
+
 /*Footer*/
 footer {
     background-color: black;

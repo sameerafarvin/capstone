@@ -1,0 +1,63 @@
+{% extends 'shop/layouts/main.html' %} {% block content %}
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class=" h2 py-4">{{category_name}} Products</h4>
+                <hr >
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="{% url 'home' products.category.name%}"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="{% url 'home' products.category.name%}"
+                                >{{products.category.name}}</a
+                            >
+                        </li>
+                        <li class="breadcrumb-item active">{{products}}</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="col-12 col-lg-6 my-4">
+                <div class="card">
+                    <img
+                        src="{{products.product_image.url}}"
+                        class="card-img-top " 
+                        alt="{{products}}"
+                    />
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 my-4">
+                <div class="my-3 px-5">
+                    <h5 class=" h1 text-body py-1">{{products | upper}}</h5>
+                    
+                    <p class="text-dark fs-5 py-1  ">{{products.description}}</p>
+                    <h6 class="my-2 text-danger">
+                        Current Price : £ <s>{{products.original_price}}</s>
+                    </h6>
+                    <h6 class="my-2 text-success fs-4 ">
+                        Offer Price : £{{products.selling_price}}
+                    </h6>
+                    <div class="my-4">
+                        {% if products.quantity > 0 %}
+
+                        <button class="btn custom-primary " id="btnCart">
+                            <i class="fa-solid fa-basket-shopping"></i> Add to Cart
+                        </button>
+                        {% else %}
+                        <button class="btn btn-danger">
+                            <i class="fa-solid fa-minus"></i> Out of Stock
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
