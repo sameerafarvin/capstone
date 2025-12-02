@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from.models import *
 from django.contrib import messages
+from .form import CustomUserForm
 
 
 
@@ -32,6 +33,14 @@ def product_details(request,cname,pname):
         return redirect('home')
 
 
+
 def register(request):
-    return render(request, 'shop/register.html')
+    form=CustomUserForm()
+    if request.method=='POST':
+        form=CustomUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Registration Success Please Login")
+            return redirect('/login')
+    return render(request,"shop/register.html",{'form':form})
    

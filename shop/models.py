@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Category(models.Model):

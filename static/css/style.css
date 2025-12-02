@@ -14,9 +14,8 @@ a{
 }
 
 
-.navbar-custom .nav-link {
-    font-weight: bold;
-   
+.navbar-custom .nav-link:hover {
+    text-decoration: underline;
 }
 /* Add overflow-x hidden to prevent horizontal scrolling */
 header {
@@ -77,15 +76,14 @@ header {
     padding: 2px 6px;
     color: white;
     border-radius: 5px;
+}
 
 
 /*Footer*/
-footer {
-    background-color: black;
-    color: white;
-}
-#footer .social-links i {
-    color: white;
-    font-size: 1.9rem;
-    transition: color 0.3s ease-in-out;
+
+#footer .social-links {
+   
+
+   
+       
 }
