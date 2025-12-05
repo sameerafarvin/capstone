@@ -109,7 +109,8 @@ def add_to_cart(request):
             else:
                 messages.error(request, f"Only {product.quantity} Quantity Available")
         else:
-            messages.error(request, "Login to Continue")
+            messages.success(request, "Please login to shop")
+            return redirect('/login/')
     return redirect('/')
 
 
@@ -118,10 +119,18 @@ def cart_page(request):
         cart = Cart.objects.filter(user=request.user)
         return render(request, "shop/cart.html", {"cart": cart})
     else:
-        messages.error(request, "Login to Continue")
+        messages.success(request, "Login to view your cart")
         return redirect('/login/')
     
 
+
+ 
+def remove_item(request,cid):
+    cartitem=Cart.objects.get(id=cid)
+    cartitem.delete()
+    messages.success(request,"Item Removed from Cart")
+    return redirect("/cart/")
+ 
 
 
    

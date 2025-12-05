@@ -41,8 +41,8 @@
                         Offer Price : £{{products.selling_price}}
                     </h6>
                     <div class="my-4">
-                        {% if products.quantity > 0 %} 
-                        {% if user.is_authenticated %}
+                        {% if products.quantity > 0 %}
+
                         <form method="POST" action="{% url 'addtocart' %}">
                             {% csrf_token %}
                             <input
@@ -51,7 +51,8 @@
                                 value="{{ products.id }}"
                             />
                             <div class="input-group pb-4">
-                                <button type="button"
+                                <button
+                                    type="button"
                                     class="input-group-text bg-danger text-light"
                                     id="btnMinus"
                                 >
@@ -64,48 +65,24 @@
                                     value="1"
                                     class="form-control text-center"
                                 />
-                                <button type="button"
+                                <button
+                                    type="button"
                                     class="input-group-text bg-success text-light"
                                     id="btnPlus"
                                 >
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
-                            <button type="submit" class="btn custom-primary" id="btnCart">
+                            <button
+                                type="submit"
+                                class="btn custom-primary"
+                                id="btnCart"
+                            >
                                 <i class="fa-solid fa-basket-shopping"></i> Add
                                 to Cart
                             </button>
                         </form>
                         {% else %}
-                        <div class="input-group pb-4" >
-                            <button type="button"
-                                class="input-group-text bg-danger text-light disabled"
-                                id="Minus"
-                            >
-                                <i class="fa-solid fa-minus"></i>
-                            </button>
-                            <input
-                                type="text"
-                                name="qty"
-                                id="txt"
-                                value="1"
-                                class="form-control text-center "
-                            />
-                            <button type="button"
-                                class="input-group-text bg-success text-light disabled"
-                                id="Plus"
-                            >
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                        </div>
-                        <button
-                            class="btn custom-primary "
-                            onclick="alert('You need to log in to add items to the cart.')"
-                        >
-                            <i class="fa-solid fa-basket-shopping"></i> Add to
-                            Cart
-                        </button>
-                        {% endif %} {% else %}
                         <button class="btn btn-danger">
                             <i class="fa-solid fa-minus"></i> Out of Stock
                         </button>
