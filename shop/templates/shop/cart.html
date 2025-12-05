@@ -1,0 +1,65 @@
+{% extends 'shop/layouts/main.html' %}
+
+{% block content %}
+ <section class="bg-light py-4 my-5" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4 class=" h2 py-3">Cart  Items</h4>
+           {% include 'shop/inc/message.html' %}
+        </div>
+      
+        <table>
+            <tr class="border-bottom">
+                <th>Image</th>
+                <th>Pro_Name</th>
+                <th>Unit</th>
+                <th>Qty</th>
+                <th>|£|</th>
+               
+            </tr>
+          
+
+            {% for item in cart %}
+           <tr>
+              <td><img class=" pt-2" src="{{item.product.product_image.url}}" height="75px" alt="{{item.product.name}}"></td>
+              <td>{{item.product.name}}</td>
+              <td>{{item.product.selling_price }}</td>
+              <td>{{item.product_qty}}</td>
+              <td class="amt">{{item.total_cost }}</td>
+              <td><a href="#"  onclick="return confirm('Are you sure? to Remove')"  class="btn btn-danger btn-sm"> Remove</a></td>
+            </tr>
+            {% endfor %}
+            <tr>
+              <td></td>
+              <td></td>
+              <td colspan="2"><b>Total</b></td>
+              <th id="net">0</th>
+              <td><button class="btn btn-success btn-sm">
+                </i> CheckOut
+              </button></td>
+            </tr>
+           
+        </table>
+    
+       
+      </div>
+      </div>
+  </section>
+
+  <script>
+  let total = 0;
+
+  // get all elements with class 'amt'
+  let items = document.querySelectorAll('.amt');
+
+  // loop through each element
+  for (let i = 0; i < items.length; i++) {
+    total += Number(items[i].textContent);
+  }
+
+  // show the total
+  document.getElementById("net").textContent = "£: " + total;
+</script>
+
+{% endblock content %}

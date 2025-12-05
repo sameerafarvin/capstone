@@ -3,14 +3,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h4 class=" h2 py-4">{{category_name}} Products</h4>
-                <hr >
+                <h4 class="h2 py-4">{{category_name}} Products</h4>
+                <hr />
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="{% url 'home' %}"
-                                >Home</a
-                            >
+                            <a href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="breadcrumb-item">
                             <a href="{% url 'product' products.category.name%}"
@@ -26,29 +24,88 @@
                 <div class="card">
                     <img
                         src="{{products.product_image.url}}"
-                        class="card-img-top " 
+                        class="card-img-top"
                         alt="{{products}}"
                     />
                 </div>
             </div>
             <div class="col-12 col-lg-6 my-4">
                 <div class="my-3 px-2">
-                    <h5 class=" h1 text-body py-1">{{products | upper}}</h5>
-                    
-                    <p class="text-dark fs-5 py-1  ">{{products.description}}</p>
+                    <h5 class="h1 text-body py-1">{{products | upper}}</h5>
+
+                    <p class="text-dark fs-5 py-1">{{products.description}}</p>
                     <h6 class="my-2 text-danger">
                         Current Price : £ <s>{{products.original_price}}</s>
                     </h6>
-                    <h6 class="my-2 text-success fs-4 ">
+                    <h6 class="my-2 text-success fs-4">
                         Offer Price : £{{products.selling_price}}
                     </h6>
                     <div class="my-4">
-                        {% if products.quantity > 0 %}
-
-                        <button class="btn custom-primary " id="btnCart">
-                            <i class="fa-solid fa-basket-shopping"></i> Add to Cart
-                        </button>
+                        {% if products.quantity > 0 %} 
+                        {% if user.is_authenticated %}
+                        <form method="POST" action="{% url 'addtocart' %}">
+                            {% csrf_token %}
+                            <input
+                                type="hidden"
+                                name="product_id"
+                                value="{{ products.id }}"
+                            />
+                            <div class="input-group pb-4">
+                                <button type="button"
+                                    class="input-group-text bg-danger text-light"
+                                    id="btnMinus"
+                                >
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <input
+                                    type="text"
+                                    name="qty"
+                                    id="txtQty"
+                                    value="1"
+                                    class="form-control text-center"
+                                />
+                                <button type="button"
+                                    class="input-group-text bg-success text-light"
+                                    id="btnPlus"
+                                >
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <button type="submit" class="btn custom-primary" id="btnCart">
+                                <i class="fa-solid fa-basket-shopping"></i> Add
+                                to Cart
+                            </button>
+                        </form>
                         {% else %}
+                        <div class="input-group pb-4" >
+                            <button type="button"
+                                class="input-group-text bg-danger text-light disabled"
+                                id="Minus"
+                            >
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <input
+                                type="text"
+                                name="qty"
+                                id="txt"
+                                value="1"
+                                class="form-control text-center "
+                            />
+                            <button type="button"
+                                class="input-group-text bg-success text-light disabled"
+                                id="Plus"
+                            >
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <button
+                            class="btn custom-primary "
+                            onclick="alert('You need to log in to add items to the cart.')"
+                        >
+                            <i class="fa-solid fa-basket-shopping"></i> Add to
+                            Cart
+                        </button>
+                        {% endif %} {% else %}
                         <button class="btn btn-danger">
                             <i class="fa-solid fa-minus"></i> Out of Stock
                         </button>
@@ -59,5 +116,28 @@
         </div>
     </div>
 </section>
+<!--script-->
+<script>
+    let btnPlus = document.getElementById("btnPlus");
+    let btnMinus = document.getElementById("btnMinus");
+    let txtQty = document.getElementById("txtQty");
+
+    btnPlus.addEventListener("click", () => {
+        let qty = parseInt(txtQty.value);
+        let maxQty = parseInt(txtQty.max) || 10; // Use max attribute
+        if (qty < maxQty) {
+            qty += 1;
+            txtQty.value = qty;
+        }
+    });
+
+    btnMinus.addEventListener("click", () => {
+        let qty = parseInt(txtQty.value);
+        if (qty > 1) {
+            qty -= 1;
+            txtQty.value = qty;
+        }
+    });
+</script>
 
 {% endblock content %}

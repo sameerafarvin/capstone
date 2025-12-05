@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from.models import *
+from .models import *
 from django.contrib import messages
 from .form import CustomUserForm
 from django.contrib.auth import authenticate, login, logout
@@ -70,7 +70,57 @@ def product_details(request,cname,pname):
     else:
         messages.error(request,"No Such Catagory Found")
         return redirect('home')
+    
+def add_to_cart(request):
+    #print("POST data:", request.POST)
 
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            product_id = request.POST.get('product_id')
+            product_qty = int(request.POST.get('qty'))
+
+            try:
+                product = Product.objects.get(id=product_id)
+            except Product.DoesNotExist:
+                messages.error(request, f"No Such Product Found. Product ID: {product_id}")
+                return redirect('home') 
+
+            # check available stock
+            if product.quantity >= product_qty:
+                
+                # check if product already in cart
+                cart_item = Cart.objects.filter(user=request.user, product=product).first()
+
+                if cart_item:
+                    # REPLACE quantity instead of adding
+                    cart_item.product_qty = product_qty
+                    cart_item.save()
+                    messages.success(request, "Cart quantity updated")
+                    return redirect('cart')
+                else:
+                    # create new cart item
+                    Cart.objects.create(
+                        user=request.user,
+                        product=product,
+                        product_qty=product_qty
+                    )
+                    messages.success(request, "Product Added to Cart")
+                    return redirect('cart')
+            else:
+                messages.error(request, f"Only {product.quantity} Quantity Available")
+        else:
+            messages.error(request, "Login to Continue")
+    return redirect('/')
+
+
+def cart_page(request):
+    if request.user.is_authenticated:
+        cart = Cart.objects.filter(user=request.user)
+        return render(request, "shop/cart.html", {"cart": cart})
+    else:
+        messages.error(request, "Login to Continue")
+        return redirect('/login/')
+    
 
 
 
