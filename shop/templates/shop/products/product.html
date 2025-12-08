@@ -7,14 +7,13 @@
     <div class="row">
       <div class="col-12">
         <h4 class="mb-3">{{category_name}} Products</h4>
-        <hr style="border-color:#b8bfc2;">
+        <hr >
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
             <li class="breadcrumb-item active">{{category_name}} </li>
           </ol>
         </nav>
-      
       </div>
       {% for item in products %}
       <div class="col-12 col-md-4 col-lg-4">

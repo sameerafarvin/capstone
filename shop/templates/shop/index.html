@@ -34,7 +34,7 @@
                
             </div>
             {% for item in category %}
-            <div class="col-12 col-md-4 col-lg-4">
+            <div id="category" class="col-12 col-md-4 col-lg-4">
                 <div class="card my-3  h-100">
                     <img
                         src="{{item.image.url}}"
@@ -43,9 +43,9 @@
                     />
                     <a href="{% url 'product' item.name %}" class="text-dark text-decoration-none ">
                         <div class="card-body custom ">
-                            <h5 class=" card-title ">
+                            <h3 class=" card-title ">
                                 {{ item.name }}
-                            </h5>
+                            </h3>
                             <p class="card-text ">{{ item.description }}</p>
                         </div>
                     </a>
