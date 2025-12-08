@@ -64,7 +64,7 @@
               <td></td>
               <td colspan="2"><b>Total</b></td>
               <th id="net">0</th>
-              <td><a href="#" class="btn btn-success btn-sm">
+              <td><a href="{% url 'checkout' %}" class="btn btn-success btn-sm">
         CheckOut
     </a></td>
             </tr>
@@ -88,7 +88,7 @@
   }
 
   // show the total
-  document.getElementById("net").textContent = "£: " + total;
+  document.getElementById("net").textContent = "£: " + total.toFixed(2);
 </script>
 
 {% endblock content %}

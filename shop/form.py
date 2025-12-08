@@ -4,6 +4,7 @@ from .models import User
 from django import forms
  
 class CustomUserForm(UserCreationForm):
+    """Custom user registration form extending Django's UserCreationForm."""
     username=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Enter User Name'}))
     password1=forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':'Enter Your Password'}))
     password2=forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':'Enter Confirm Password'}))

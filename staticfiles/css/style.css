@@ -36,7 +36,6 @@ header {
 
 .custom-primary {
     background-color: #D62828 !important;
-    border-color: #D62828 !important;
     color: white !important;
 }
 
@@ -47,13 +46,8 @@ header {
     font-weight: 700;
 }
 
-
-
-
 /* Hover effect for card title */
-.card.card{
-    border-radius: 30% !impotant;
-}
+
 .card-title:hover {
     color: #D62828;       /* Change text color on hover */
     font-size: 1.4em;     /* Increase font size on hover */
