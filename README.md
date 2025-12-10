@@ -66,6 +66,7 @@ As a visitor, I can view the category, product list and product details so that 
 - Given a product is hidden or inactive(status=1), it should not appear in any product list or category page for the visitor.
 
 **User Story 3: Registration,Login,Logout**
+
 As a logged-in user, I can register, log in, and log out so that I can access user-only features.
 
 **Acceptance Criteria:**
@@ -119,10 +120,10 @@ Then the order is confirmed and saved in the database,And a confirmation message
 
 ## Wireframes
 
-The wireframes for the Food Bazaar application were created using Balsamiq Wireframes to visualize the user interface design and layout before development. These wireframes helped establish the information architecture, user flow, and responsive design considerations for desktop ,ipad and mobile experiences. 
+The wireframes for the Food Bazaar application were created using Balsamiq Wireframes to visualize the user interface design and layout before development. These wireframes helped establish the information architecture, user flow, and responsive design considerations for desktop ,iPad and mobile experiences. 
 
 
-- [desktop,Ipad and mobile](Readme/fb_wireframe.png) wireframes for FoodBazaar
+- [desktop,iPad and mobile](Readme/fb_wireframe.png) wireframes for FoodBazaar
 
 ## ERD
 
