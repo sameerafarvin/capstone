@@ -126,7 +126,7 @@ The wireframes for the Food Bazaar application were created using Balsamiq Wiref
 
 ## ERD
 
-The Entity Relationship Diagram (ERD) for the Food Bazaar application was created using Lucid app to provide a clear visual representation of the database structure and relationships. This diagram serves as a crucial design document that illustrates how data is organized and connected within the application.
+The Entity Relationship Diagram (ERD) for the Food Bazaar application was created using LucidChart to provide a clear visual representation of the database structure and relationships. This diagram serves as a crucial design document that illustrates how data is organized and connected within the application.
 
 ![Entity Relationship Diagram for the FoodBazaar](Readme/fb_erd.png)
 
@@ -140,7 +140,7 @@ The following colours are the main colours used in the Food Bazaar
 
 ## Font
 
-I used Open sans as the primary font. Open sans creates a clean, modern and highly readable interface that aligns with the calming and positive nature of the Food Bazaar application. The font weights are varied throughout the project for headings and subheadings.
+I used Open Sans as the primary font. Open sans creates a clean, modern and highly readable interface that aligns with the calming and positive nature of the Food Bazaar application. The font weights are varied throughout the project for headings and subheadings.
 
 # Key Features
 
@@ -168,7 +168,7 @@ Here is what the website looks like on different screens:
 
 - [Desktop Responsiveness](Readme/fb_deskresponse.png)
 
-## Ipad
+## iPad
 
 - [Ipad Responsiveness](Readme/fb_ipadresponse.png)
 
@@ -195,11 +195,11 @@ The project is configured to use Cloudinary as the primary storage service for a
 
 <p align="right"><a href="#food-bazaar">Back To Top</a></p>
 
-# AI Impelementation & Orchestration
+# AI Implementation & Orchestration
 
 I leveraged artificial intelligence as a comprehensive development partner throughout the entire project lifecycle. AI served as an intelligent coding assistant, providing expert guidance on Django best practices, debugging complex issues, and optimizing code structure for maintainability and performance.
 
-**Code Development & Architecture:** AI assistance was instrumental in structuring the Django application architecture, helping to design efficient models, views, and URL patterns. The AI provided recommendations for implementing the mood tracking system, user authentication flows, and database relationships, ensuring the codebase followed industry standards and Django conventions.
+**Code Development & Architecture:** AI assistance was instrumental in structuring the Django application architecture, helping to design efficient models, views, and URL patterns.
 
 **Problem-Solving & Debugging:** Throughout development, AI served as a debugging partner, helping to identify and resolve issues with static file serving, database migrations, and deployment configurations. 
 
@@ -211,7 +211,7 @@ I leveraged artificial intelligence as a comprehensive development partner throu
 
 # Testing
 
-I tested the application on my windows laptop and on ipad to see if there were any bugs that needed to be fixed. I also tested the application on iphone.
+I tested the application on my windows laptop and on iPad to see if there were any bugs that needed to be fixed. I also tested the application on iPhone.
 
 Furthermore, I ran lighthouse tests using chrome developer tools to obtain scores for the pages' performance, accessibility and best practices. I tested for both the desktop and mobile pages. 
 
@@ -267,9 +267,9 @@ The application was tested manually to make sure user authentication and CRUD fu
 - Show a [please login to view your cart ](Readme/login_to_view_cart.png)message when a visitor clicks the **Cart** in the navbar
 - [Out of stock](Readme/out_of_stock.png)
 - [Product added to the cart](Readme/product_added.png)
-- [cart item quantity updated](Readme/cart_quantity_updated.png) Chicken Biryani quantity **updated** from 1 to 2
-- [cart item romove request](Readme/cart_item_delete.png)
-- [cart item removed](Readme/cart_item_removed.png) Chicken Biryani **removed** from the cart
+- [Cart item quantity updated](Readme/cart_quantity_updated.png) Item (Chicken Biryani) quantity **updated** from 1 to 2
+- [Cart item remove request](Readme/cart_item_delete.png)
+- [Cart item removed](Readme/cart_item_removed.png) Item (Chicken Biryani) **removed** from the cart
  
 
 # Future Enhancements
@@ -281,13 +281,13 @@ The application was tested manually to make sure user authentication and CRUD fu
 # Agile
 
 - Project managed using agile principles: iterative development, regular review, and adaptation.
-- User stories and MOSCOW prioritisation guided feature development.
+- User stories and MoSCoW prioritisation guided feature development.
 - Kanban board (Trello/Jira/other) used for task tracking.
 
 
 # Credits
 
-I would like to credit Code Institute project. I would also like to credit ChatGPT for code generation and its amazing assistance throughout the project.
+I would like to credit Code Institute's project. I would also like to credit ChatGPT for code generation and its amazing assistance throughout the project.
 
 **Acknowledgements**
 
@@ -300,7 +300,7 @@ I would like to credit Code Institute project. I would also like to credit ChatG
 
 **Media**
 
--   The hero image and product images were generated by [Bing image creator] (https://www.bing.com/images/create/) 
+-   The hero image and product images were generated by [Bing Image Creator] (https://www.bing.com/images/create/) 
 
 <p align="right"><a href="#food-bazaar">Back To Top</a></p>
 
