@@ -272,7 +272,7 @@ The application was tested manually to make sure user authentication and CRUD fu
   **How to update product quantity**
 
    - Add the product to the cart, then go back to same product page to increase or decrease quantity
-   - Example: category--->Meals--->chicken birayani---> -___+ --->AddtoCart
+   - Example: category--->Meals--->chicken biryani---> -___+ --->AddtoCart
    - [Cart item quantity updated](Readme/cart_quantity_updated.png) message. Item (Chicken Biryani) quantity **updated** from 1 to 2
 
   **Cart Quantity Limits**
@@ -282,7 +282,7 @@ The application was tested manually to make sure user authentication and CRUD fu
   - Users cannot increase quantity beyond 10.
 
 - [Cart item remove request](Readme/cart_item_delete.png)
-- [Cart item removed](Readme/cart_item_removed.png) Item (Chicken Biryani) **removed** from the cart
+- [Cart item removed](Readme/cart_item_removed.png). Item (Chicken Biryani) **removed** from the cart
  
 
 # Future Enhancements
