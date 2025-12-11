@@ -53,7 +53,7 @@ As a visitor, I can navigate the site easily so that I can browse without confus
 
 **Acceptance Criteria:**
 - Given a visitor is on the website, they can access the menu/navigation bar.
-- Given a visitor clicks any navigation link (Home, Products, Cart, Login), they are taken to the correct page.
+- Given a visitor clicks any navigation link they are taken to the correct page.
 - Given a visitor is browsing, they can return to the previous page easily using visible navigation options.
 
 **User Story 2: Product List**
@@ -123,7 +123,7 @@ Then the order is confirmed and saved in the database,And a confirmation message
 The wireframes for the Food Bazaar application were created using Balsamiq Wireframes to visualize the user interface design and layout before development. These wireframes helped establish the information architecture, user flow, and responsive design considerations for desktop ,iPad and mobile experiences. 
 
 
-- [desktop,iPad and mobile](Readme/fb_wireframe.png) wireframes for FoodBazaar
+- [Desktop,iPad and Mobile](Readme/fb_wireframe.png) wireframes for FoodBazaar
 
 ## ERD
 
