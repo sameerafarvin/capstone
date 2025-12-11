@@ -268,7 +268,19 @@ The application was tested manually to make sure user authentication and CRUD fu
 - Show a [please login to view your cart ](Readme/login_to_view_cart.png)message when a visitor clicks the **Cart** in the navbar
 - [Out of stock](Readme/out_of_stock.png)
 - [Product added to the cart](Readme/product_added.png)
-- [Cart item quantity updated](Readme/cart_quantity_updated.png) Item (Chicken Biryani) quantity **updated** from 1 to 2
+
+  **How to update product quantity**
+
+   - Add the product to the cart, then go back to same product page to increase or decrease quantity
+   - Example: category--->Meals--->chicken birayani---> -___+ --->AddtoCart
+   - [Cart item quantity updated](Readme/cart_quantity_updated.png) message. Item (Chicken Biryani) quantity **updated** from 1 to 2
+
+  **Cart Quantity Limits**
+
+  - Each product in the cart can have a minimum quantity of 1.
+  - A maximum of 10 units per product is allowed.
+  - Users cannot increase quantity beyond 10.
+
 - [Cart item remove request](Readme/cart_item_delete.png)
 - [Cart item removed](Readme/cart_item_removed.png) Item (Chicken Biryani) **removed** from the cart
  
